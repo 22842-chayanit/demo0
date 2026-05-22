@@ -1,3 +1,10 @@
+ยินดีครับ! ผมได้รวบรวมข้อมูลทั้งหมดที่คุณเคยขอไว้ (ทั้ง**วิชาคอมพิวเตอร์ วิชาภาษาไทย**) และเพิ่มเซกชันใหม่ **"เพื่อนสนิท: พอมแพม"** เข้าไปต่อท้ายให้อย่างสวยงามเป็นระเบียบเรียบร้อยแล้วครับ
+
+นอกจากนี้ผมยังได้ซ่อมแซมแท็กไอคอนในส่วนหัวการ์ด (`<i class="fa-solid fa-user-astronaut"></i>`) ที่ระบบตัดคำขาดไปในตอนแรกให้สามารถแสดงผลรูปนักบินอวกาศได้สมบูรณ์ด้วยครับ
+
+คุณสามารถคัดลอกโค้ด HTML เต็มรูปแบบชุดนี้ไปใช้งานได้เลยครับ:
+
+```html
 <!DOCTYPE html>
 <html lang="th">
 <head>
@@ -90,4 +97,164 @@
             display: inline-block;
             padding: 4px 16px;
             border-radius: 20px;
-            backdrop
+            backdrop-filter: blur(5px);
+        }
+
+        /* ส่วนรายละเอียดข้อมูล */
+        .profile-body {
+            padding: 30px 25px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #edf2f7;
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .icon-box {
+            width: 45px;
+            height: 45px;
+            background-color: #e0f2fe;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .info-item:hover .icon-box {
+            background-color: var(--primary-color);
+        }
+
+        .info-item:hover .icon-box i {
+            color: white;
+        }
+
+        .icon-box i {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .info-content .label {
+            font-size: 0.85rem;
+            color: #718096;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .info-content .value {
+            font-size: 1.05rem;
+            font-weight: 400;
+            color: var(--dark-color);
+        }
+
+        /* ตกแต่งส่วนสีที่ชอบเป็นพิเศษ */
+        .color-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .color-dot {
+            width: 14px;
+            height: 14px;
+            background-color: #3a86ff; /* สีฟ้า */
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 5px rgba(58, 134, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-card">
+        <div class="profile-header">
+            <div class="profile-avatar">
+                <i class="fa-solid fa-user-astronaut"></i>
+            </div>
+            <h1>ชญานิศ มังยะสุ</h1>
+            <p>ชื่อเล่น: โบนัส</p>
+        </div>
+
+        <div class="profile-body">
+            
+            <div class="info-item">
+                <div class="icon-box">
+                    <i class="fa-solid fa-cake-candles"></i>
+                </div>
+                <div class="info-content">
+                    <span class="label">วันเกิด</span>
+                    <span class="value">14 ตุลาคม 2554</span>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="icon-box">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+                <div class="info-content">
+                    <span class="label">อาหารที่ชอบ</span>
+                    <span class="value">กะเพรา 🍳</span>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="icon-box">
+                    <i class="fa-solid fa-palette"></i>
+                </div>
+                <div class="info-content">
+                    <span class="label">สีที่ชอบ</span>
+                    <span class="value class-color-text">
+                        <div class="color-badge">
+                            สีฟ้า <span class="color-dot"></span>
+                        </div>
+                    </span>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="icon-box">
+                    <i class="fa-solid fa-laptop"></i>
+                </div>
+                <div class="info-content">
+                    <span class="label">วิชาที่ชอบ</span>
+                    <span class="value">คอมพิวเตอร์ 💻</span>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="icon-box">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+                <div class="info-content">
+                    <span class="label">วิชาที่ชอบ</span>
+                    <span class="value">ภาษาไทย 📖</span>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="icon-box">
+                    <i class="fa-solid fa-user-group"></i>
+                </div>
+                <div class="info-content">
+                    <span class="label">เพื่อนสนิท</span>
+                    <span class="value">พอมแพม 🎀</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
+
+```
